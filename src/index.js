@@ -1,13 +1,13 @@
 import express from 'express';
 
 import React from 'react';
-import {renderToNodeStream} from 'react-dom/server.suspense';
+import {renderToStringAsync} from 'react-async-ssr';
 
 import {movieDetails, movieReviews} from './data';
 
 import 'isomorphic-fetch';
 
-import createApp from './App';
+import createApp from './App2';
 
 const app = express();
 
@@ -38,15 +38,13 @@ app.use((req, res, next) => {
   }
 });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.write(openDocumentHTML);
   const App = createApp(req.query);
-  const stream = renderToNodeStream(<App />);
-  stream.pipe(res);
-  stream.on('finish', () => {
-    res.write(closeDocumentHTML);
-    res.end();
-  });
+  const html = await renderToStringAsync(<App />);
+  res.write(html);
+  res.write(closeDocumentHTML);
+  res.end();
 });
 
 app.get('/movies/:id', (req, res) => {

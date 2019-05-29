@@ -4256,6 +4256,18 @@ react:
    object-assign: ^4.1.1
    prop-types: ^15.6.2
    scheduler: ^0.13.6
+react-async-ssr:
+ _latest: 0.4.6
+ _:
+  ^0.4.6: 0.4.6
+ 0.4.6:
+  top: 1
+  $: sha512-CDsA9NNMW87VrNLLw2iZJ/dU3907FoZkWU/9byVR3hNyJKL0eafP6wg+7cDMlbOkr45oV5JRtsBERX4XrCei+Q==
+  _: 'https://registry.npmjs.org/react-async-ssr/-/react-async-ssr-0.4.6.tgz'
+  dependencies:
+   react-dom: ^16.8.6
+  peerDependencies:
+   react: ^16.6.0
 react-dom:
  _latest: 16.8.6
  _:
