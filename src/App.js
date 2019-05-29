@@ -127,7 +127,9 @@ export default function({scale_network_speed = 1}) {
     const reviews = MovieReviewsResource.read(cache, props.id);
     return (
       <div className="MovieReviews">
-        {reviews.map(review => <MovieReview key={review.id} {...review} />)}
+        {reviews.map(review => (
+          <MovieReview key={review.id} {...review} />
+        ))}
       </div>
     );
   }
