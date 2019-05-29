@@ -1,8 +1,7 @@
 {
   "name": "suspense-ssr-demo",
   "version": "1.0.0",
-  "description":
-    "Demo of server renderer prototype with support for React Suspense",
+  "description": "Demo of server renderer prototype with support for React Suspense",
   "main": "index.js",
   "author": "Andrew Clark <acdlite@me.com>",
   "license": "MIT",
@@ -19,6 +18,8 @@
     "backpack-core": "^0.7.0",
     "express": "^4.16.3",
     "isomorphic-fetch": "^2.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "simple-cache-provider": "^0.5.0"
   }
 }
